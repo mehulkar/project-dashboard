@@ -2,14 +2,24 @@ body {
   background-image: linear-gradient(to left, #fcf5f5, #f0f2ff);
 }
 
-
 .App-header {
   background-image: linear-gradient(to left, #ffffff, #f2f3f5);
   display: flex;
   align-items: center;
   padding-right: 1rem;
+  margin-bottom: 3rem;
 }
 
-.App-header spacer {
-  flex: 1;
+spacer { flex: 1; }
+
+.App-row {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.App-body {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
