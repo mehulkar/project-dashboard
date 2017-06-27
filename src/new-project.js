@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import plusIcon from './images/plus .png'
 import './project.css'
 
 class NewProject extends Component {
   render() {
     return (
-      <div className='project'>
+      <div className='project new-project'>
+        <img src={plusIcon} className='plus-icon' height='66' width='66' />
+        <span className='light'>Create new app</span>
       </div>
     );
   }
