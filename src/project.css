@@ -13,10 +13,7 @@
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.05);
   width: calc(25% - 1rem);
   margin: 0 1rem;
-}
 
-
-.new-project {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,5 +25,20 @@
 }
 
 .plus-icon {
+  margin-bottom: 1rem;
+}
+
+.project-name {
+  color: #5d5d5d;
+  margin-bottom: 0.5rem;
+}
+
+.project-date {
+  color: #c6c6c6;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.project-icon {
   margin-bottom: 1rem;
 }

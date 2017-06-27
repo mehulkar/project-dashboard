@@ -15,7 +15,7 @@ class ProjectList extends Component {
       <div className='project-list'>
         <NewProject />
         {projectData.map((project) =>
-          <Project key={project.id}>{project}</Project>
+          <Project key={project.id} name={project.name} lastEdited={project.lastEdited} />
         )}
       </div>
     );
