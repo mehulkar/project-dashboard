@@ -7,7 +7,7 @@ body {
   display: flex;
   align-items: center;
   padding-right: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 spacer { flex: 1; }
