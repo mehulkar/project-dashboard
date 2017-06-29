@@ -11,10 +11,20 @@ const projectData = [
 
 class ProjectList extends Component {
   render() {
+    let filtered = projectData;
+    const filter = this.props.filter;
+
+    // TODO: Figure out How to make this an onChange
+    // filter rather than inline in render
+    if (filter) {
+      const filterRegex = RegExp(filter, 'i');
+      filtered = projectData.filter(project => project.name.match(filterRegex));
+    }
+
     return (
       <div className='project-list'>
         <NewProject />
-        {projectData.map((project) =>
+        {filtered.map((project) =>
           <Project key={project.id} name={project.name} lastEdited={project.lastEdited} />
         )}
       </div>

@@ -36,7 +36,7 @@ class App extends Component {
             <span>Sort by:</span>
             <SortBox />
           </div>
-          <ProjectList />
+          <ProjectList filter={this.state.searchValue} />
         </div>
       </div>
     );
