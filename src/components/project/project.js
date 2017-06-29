@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import projectIcon from './images/defaut icon.png'
-import deleteIcon from './images/delete.png'
-import downloadIcon from './images/download.png'
+import projectIcon from '../../images/defaut icon.png'
+import deleteIcon from '../../images/delete.png'
+import downloadIcon from '../../images/download.png'
 import './project.css'
 
 // TODO: use moment.js or similar for this

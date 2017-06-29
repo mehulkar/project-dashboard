@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import logo from './images/beaver 1.png';
 import settingsIcon from './images/setting icon.png';
-import SearchBar from './search-bar.js'
-import SortBox from './sort-box.js'
-import ProjectList from './project-list.js'
+import SearchBar from './components/search-bar/search-bar.js'
+import SortBox from './components/sort-box/sort-box.js'
+import ProjectList from './components/project-list.js'
 import './App.css';
 
 class App extends Component {

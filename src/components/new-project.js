@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import plusIcon from './images/plus .png'
-import './project.css'
+import plusIcon from '../images/plus .png'
+import './project/project.css'
 
 class NewProject extends Component {
   render() {

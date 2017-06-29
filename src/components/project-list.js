@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NewProject from './new-project.js'
-import Project from './project.js'
-import './project.css'
+import Project from './project/project.js'
+import './project/project.css'
 
 const projectData = [
   { id: 1, name: 'Foo', lastEdited: new Date(2017, 1, 1) },

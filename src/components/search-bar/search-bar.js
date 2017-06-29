@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import searchIcon from './images/search.png'
+import searchIcon from '../../images/search.png'
 import './search-bar.css'
 
 class SearchBar extends Component {
