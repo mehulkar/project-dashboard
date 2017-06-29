@@ -9,4 +9,10 @@
   border: 0;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+  animation: grow-wide 400ms ease;
+}
+
+@keyframes grow-wide {
+  0% { width: 0%; }
+  100% { width: 100%; }
 }
