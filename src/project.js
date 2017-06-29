@@ -13,6 +13,15 @@ function formattedDate(dateObject) {
 }
 
 class Project extends Component {
+  constructor(props) {
+    super(props);
+    this.projectName = this.projectName.bind(this);
+  }
+
+  projectName() {
+    return `${this.props.project.name}.txt`
+  }
+
   render() {
     return (
       <div className='project'>
@@ -26,7 +35,9 @@ class Project extends Component {
                 this.props.onDelete.bind(this, this.props.project)
               }
             />
-          <img src={downloadIcon} />
+          <a href='/download.txt' download={this.projectName()}>
+            <img src={downloadIcon} />
+          </a>
         </div>
       </div>
     );
