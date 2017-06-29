@@ -16,6 +16,7 @@ class SearchBar extends Component {
 
   showSearchBar() {
     this.setState({open: !this.state.open})
+    // TODO: figure out how to set focus on the search bar
   }
 
   handleChange(event) {
