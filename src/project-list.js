@@ -4,9 +4,9 @@ import Project from './project.js'
 import './project.css'
 
 const projectData = [
-  { id: 1, name: 'Demo App 1', lastEdited: new Date(2017, 1, 1) },
-  { id: 2, name: 'Demo App 2', lastEdited: new Date(2017, 1, 1) },
-  { id: 3, name: 'Demo App 3', lastEdited: new Date(2017, 1, 1) },
+  { id: 1, name: 'Foo', lastEdited: new Date(2017, 1, 1) },
+  { id: 2, name: 'Bar', lastEdited: new Date(2015, 1, 1) },
+  { id: 3, name: 'Baz', lastEdited: new Date(2014, 1, 1) },
 ]
 
 class ProjectList extends Component {
