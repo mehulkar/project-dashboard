@@ -31,12 +31,15 @@ class Project extends Component {
 
         <div>
           <img src={deleteIcon}
+              className='clickable'
               onClick={
                 this.props.onDelete.bind(this, this.props.project)
               }
             />
           <a href='/download.txt' download={this.projectName()}>
-            <img src={downloadIcon} />
+            <img
+              className='clickable'
+              src={downloadIcon} />
           </a>
         </div>
       </div>
