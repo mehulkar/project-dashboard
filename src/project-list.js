@@ -13,8 +13,21 @@ class ProjectList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      projects: projectData
-    }
+      projects: [],
+      loading: false,
+    };
+    let promise = new Promise(resolve => {
+      this.state.loading = true;
+      setTimeout(() => resolve(projectData), 2000);
+    });
+
+    promise.then(data => {
+      this.setState({
+        projects: data,
+        loading: false
+      });
+    });
+
     this.deleteProject = this.deleteProject.bind(this);
   }
 
@@ -55,16 +68,22 @@ class ProjectList extends Component {
       return value;
     });
 
+    let template = sorted.map((project) =>
+      <Project
+        key={project.id}
+        project={project}
+        onDelete={this.deleteProject}
+      />
+    )
+
+    let loadingTemplate = <span>
+      A better loading spinner indicator here...
+    </span>
+
     return (
       <div className='project-list'>
         <NewProject />
-        {sorted.map((project) =>
-          <Project
-            key={project.id}
-            project={project}
-            onDelete={this.deleteProject}
-          />
-        )}
+        {this.state.loading ? loadingTemplate : template}
       </div>
     );
   }
