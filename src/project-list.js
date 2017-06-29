@@ -10,15 +10,22 @@ const projectData = [
 ]
 
 class ProjectList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      projects: projectData
+    }
+  }
+
   render() {
-    let filtered = projectData;
+    let filtered = this.state.projects;
     const filter = this.props.filter;
 
     // TODO: Figure out How to make this an onChange
     // filter rather than inline in render
     if (filter) {
       const filterRegex = RegExp(filter, 'i');
-      filtered = projectData.filter(project => project.name.match(filterRegex));
+      filtered = this.state.projects.filter(project => project.name.match(filterRegex));
     }
 
     const sortProp = this.props.sortProperty;
