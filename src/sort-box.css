@@ -1,0 +1,14 @@
+.sort-box {
+  display: flex;
+  align-items: center;
+  color: #6a6a6a;
+}
+
+.sort-box span {
+  margin-right: 1rem;
+}
+.sort-box select {
+  font-size: 16px;
+  color: #6a6a6a;
+  border: solid 1px #333;
+}

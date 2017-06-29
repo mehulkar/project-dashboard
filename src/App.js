@@ -50,7 +50,6 @@ class App extends Component {
           <div className='App-row'>
             <SearchBar searchValue={this.state.searchValue} onSearchValueChange={this.filterProjects} />
             <spacer />
-            <span>Sort by:</span>
             <SortBox
               sortProperty={this.state.sortProperty}
               onSortValueChange={this.sortProjects}

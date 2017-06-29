@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './sort-box.css';
 
 class SortBox extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class SortBox extends Component {
   render() {
     return (
       <div className='sort-box'>
+        <span className='light'>Sort by</span>
         <select onChange={this.handleChange}>
           <option value='lastEdited'>Last Edit</option>
           <option value='name'>Name</option>
