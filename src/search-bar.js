@@ -7,7 +7,7 @@ class SearchBar extends Component {
     super(props);
     this.state = {
       open: false,
-      searchValue: ''
+      searchValue: this.props.searchValue,
     };
     this.showSearchBar = this.showSearchBar.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -18,13 +18,13 @@ class SearchBar extends Component {
   }
 
   handleChange(event) {
-    this.setState({searchValue: event.target.value});
+    this.props.onSearchValueChange(event.target.value);
   }
 
   render() {
     let searchBar = null;
     if (this.state.open) {
-      searchBar = <input value={this.state.searchValue}
+      searchBar = <input value={this.props.searchValue}
                         placeholder='Search for a project...'
                         onChange={this.handleChange} />
     }

@@ -7,6 +7,20 @@ import ProjectList from './project-list.js'
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchValue: ''
+    };
+
+    this.filterProjects = this.filterProjects.bind(this);
+  }
+
+  filterProjects(searchValue) {
+    this.setState({searchValue: searchValue});
+    console.log(`searching by ${searchValue}`);
+  }
+
   render() {
     return (
       <div className='App'>
@@ -17,7 +31,7 @@ class App extends Component {
         </div>
         <div className='App-body'>
           <div className='App-row'>
-            <SearchBar />
+            <SearchBar searchValue={this.state.searchValue} onSearchValueChange={this.filterProjects} />
             <spacer />
             <span>Sort by:</span>
             <SortBox />
