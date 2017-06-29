@@ -10,15 +10,21 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchValue: ''
+      searchValue: '',
+      sortProperty: 'lastEdited'
     };
 
     this.filterProjects = this.filterProjects.bind(this);
+    this.sortProjects = this.sortProjects.bind(this);
   }
 
   filterProjects(searchValue) {
     this.setState({searchValue: searchValue});
     console.log(`searching by ${searchValue}`);
+  }
+
+  sortProjects(sortProperty) {
+    this.setState({sortProperty: sortProperty})
   }
 
   render() {
@@ -34,9 +40,15 @@ class App extends Component {
             <SearchBar searchValue={this.state.searchValue} onSearchValueChange={this.filterProjects} />
             <spacer />
             <span>Sort by:</span>
-            <SortBox />
+            <SortBox
+              sortProperty={this.state.sortProperty}
+              onSortValueChange={this.sortProjects}
+            />
           </div>
-          <ProjectList filter={this.state.searchValue} />
+          <ProjectList
+            filter={this.state.searchValue}
+            sortProperty={this.state.sortProperty}
+          />
         </div>
       </div>
     );

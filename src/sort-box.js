@@ -1,12 +1,25 @@
 import React, { Component } from 'react';
 
 class SortBox extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      sort: this.props.sortProperty
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.props.onSortValueChange(event.target.value);
+  }
+
   render() {
     return (
       <div className='sort-box'>
-        <select>
-          <option value='Last Edit'>Last Edit</option>
-          <option value='Name'>Name</option>
+        <select onChange={this.handleChange}>
+          <option value='lastEdited'>Last Edit</option>
+          <option value='name'>Name</option>
         </select>
       </div>
     );
