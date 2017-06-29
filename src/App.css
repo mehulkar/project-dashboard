@@ -23,3 +23,13 @@ spacer { flex: 1; }
   max-width: 1200px;
   margin: 0 auto;
 }
+
+.spin {
+  animation: spin 400ms linear;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(25deg); }
+  100% { transform: rotate(0deg); }
+}

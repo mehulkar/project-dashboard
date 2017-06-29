@@ -16,6 +16,7 @@ class App extends Component {
 
     this.filterProjects = this.filterProjects.bind(this);
     this.sortProjects = this.sortProjects.bind(this);
+    this.spin = this.spin.bind(this);
   }
 
   filterProjects(searchValue) {
@@ -27,13 +28,23 @@ class App extends Component {
     this.setState({sortProperty: sortProperty})
   }
 
+  spin(event) {
+    let removeSpinner = (event)=> {
+      event.target.classList.remove('spin');
+      event.target.removeEventListener('animationend', removeSpinner);
+    }
+    // TODO look up browser compatibility and add prefixes
+    event.target.addEventListener('animationend', removeSpinner.bind(event.target));
+    event.target.classList.add('spin');
+  }
+
   render() {
     return (
       <div className='App'>
         <div className='App-header'>
           <img src={logo} alt="logo" />
           <spacer></spacer>
-          <img src={settingsIcon} alt="logo" />
+          <img src={settingsIcon} alt="logo" onClick={this.spin} />
         </div>
         <div className='App-body'>
           <div className='App-row'>
