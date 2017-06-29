@@ -4,6 +4,18 @@
   justify-content: space-around;
 }
 
+@media (max-width: 800px) {
+  .project-list {
+    display: block;
+    margin: 0;
+  }
+  .project-list .project {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+
 .project {
   width: 270px;
   min-width: 270px;
