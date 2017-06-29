@@ -17,11 +17,15 @@ class Project extends Component {
     return (
       <div className='project'>
         <img className='project-icon' src={projectIcon} width='66' height='66' />
-        <span className='project-name'>{this.props.name}</span>
-        <span className='project-date'>Last edit: {formattedDate(this.props.lastEdited)}</span>
+        <span className='project-name'>{this.props.project.name}</span>
+        <span className='project-date'>Last edit: {formattedDate(this.props.project.lastEdited)}</span>
 
         <div>
-          <img src={deleteIcon} />
+          <img src={deleteIcon}
+              onClick={
+                this.props.onDelete.bind(this, this.props.project)
+              }
+            />
           <img src={downloadIcon} />
         </div>
       </div>

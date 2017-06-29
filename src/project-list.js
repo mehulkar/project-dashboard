@@ -15,6 +15,16 @@ class ProjectList extends Component {
     this.state = {
       projects: projectData
     }
+    this.deleteProject = this.deleteProject.bind(this);
+  }
+
+  deleteProject(project) {
+    if (window.confirm(`Are you sure you want to delete ${project.name}`)) {
+      let copy = this.state.projects.slice();
+      let index = copy.indexOf(project);
+      copy.splice(index, 1);
+      this.setState({projects: copy});
+    }
   }
 
   render() {
@@ -49,7 +59,11 @@ class ProjectList extends Component {
       <div className='project-list'>
         <NewProject />
         {sorted.map((project) =>
-          <Project key={project.id} name={project.name} lastEdited={project.lastEdited} />
+          <Project
+            key={project.id}
+            project={project}
+            onDelete={this.deleteProject}
+          />
         )}
       </div>
     );
