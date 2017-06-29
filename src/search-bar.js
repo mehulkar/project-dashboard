@@ -11,6 +11,7 @@ class SearchBar extends Component {
     };
     this.showSearchBar = this.showSearchBar.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   showSearchBar() {
@@ -21,12 +22,19 @@ class SearchBar extends Component {
     this.props.onSearchValueChange(event.target.value);
   }
 
+  handleKeyPress(event) {
+    if (event.keyCode === 27) {
+      this.setState({open: false});
+    }
+  }
+
   render() {
     let searchBar = null;
     if (this.state.open) {
       searchBar = <input value={this.props.searchValue}
                         placeholder='Search for a project...'
-                        onChange={this.handleChange} />
+                        onChange={this.handleChange}
+                        onKeyDown={this.handleKeyPress}/>
     }
     return (
       <div className='search-bar'>
